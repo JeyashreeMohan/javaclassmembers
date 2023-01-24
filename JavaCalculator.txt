@@ -1,0 +1,72 @@
+import java.util.Scanner;
+public class CalculatorMain {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the two numbers you wants to manipulate");
+		Scanner input=new Scanner(System.in);
+		int num1=input.nextInt();
+		int num2=input.nextInt();
+		MagicCalculator Calc=new MagicCalculator();
+		Calc.add(num1,num2);
+		Calc.subtract(num1,num2);
+		Calc.multiply(num1,num2);
+		Calc.divide(num1,num2);
+		Calc.square(num1,2);
+		Calc.sqrt(num1);
+		Calc.sin(num1);
+		Calc.cosine(num1);
+		Calc.tangent(num1);
+		System.out.println("factorial"+Calc.fact(num1));
+		
+	}
+
+}
+
+
+public class MagicCalculator extends JavaCalculator {
+	public void sqrt(int num1) {
+		System.out.println("Squareroot"+Math.sqrt(num1));
+	}
+	public void sin(int num1) {
+		System.out.println("Sine"+Math.sin(num1));
+	}
+	public void cosine(int num1) {
+		System.out.println("Cosine"+Math.cos(num1));
+	}
+	public void tangent(int num1) {
+		System.out.println("Tangent:"+Math.tan(num1));
+	}
+
+	public int fact(int num1) {
+		int facts;
+		if(num1==1) {
+			return 1;
+		}else {
+			return facts=num1*fact(num1-1);
+		
+					}
+	}
+}
+
+
+public class JavaCalculator {
+public void add(int num1,int num2) {
+	int sum=num1+num2;
+	System.out.println("Addition :"+sum);
+}
+public void subtract(int num1,int num2) {
+	int sub=num1-num2;
+	System.out.println("subtraction :"+sub);
+}
+public void multiply(int num1,int num2) {
+	int mul=num1*num2;
+	System.out.println("Multiplication :"+mul);
+}
+public void divide(int num1,int num2) {
+	int div=num1/num2;
+	System.out.println("Division :"+div);
+}
+public void square(int num1,int num2) {
+	System.out.println("Square"+Math.pow(num1,num2));
+}
+}
